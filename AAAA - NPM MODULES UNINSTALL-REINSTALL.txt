@@ -1,0 +1,45 @@
+Passaggi da Seguire:
+Rimuovi package-lock.json e node_modules
+
+Apri il prompt dei comandi e naviga nella cartella del tuo progetto:
+
+bash
+Copia codice
+cd C:\Users\LIVE\Desktop\FormPulledClient\formClient
+Poi rimuovi package-lock.json e la cartella node_modules:
+
+bash
+Copia codice
+del /s /q package-lock.json
+rmdir /s /q node_modules
+Se stai usando PowerShell, i comandi sono leggermente diversi:
+
+powershell
+Copia codice
+Remove-Item -Force -Recurse .\package-lock.json
+Remove-Item -Force -Recurse .\node_modules
+Pulisci la cache di npm
+
+Dopo aver rimosso package-lock.json e node_modules, pulisci la cache di npm:
+
+bash
+Copia codice
+npm cache clean --force
+Reinstalla i moduli
+
+Successivamente, reinstalla tutti i moduli del progetto:
+
+bash
+Copia codice
+npm install
+Verifica le Dipendenze di Rollup
+
+Controlla se ci sono problemi con il pacchetto @rollup/rollup-win32-x64-msvc. A volte, potrebbe essere necessario aggiornare manualmente questo pacchetto o le sue dipendenze se ci sono conflitti o errori durante l'installazione.
+
+Riavvia il Server di Sviluppo
+
+Una volta completati i passaggi sopra, prova a riavviare il server di sviluppo con:
+
+bash
+Copia codice
+ng serve
